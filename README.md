@@ -1,0 +1,1 @@
+ضع الشعار في images/logo.png وصور المنتجات في images/.
