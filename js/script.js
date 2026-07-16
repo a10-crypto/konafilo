@@ -1,31 +1,41 @@
-// Mobile navigation toggle
+// GET THE MENU BUTTON AND MENU
 const menuToggle = document.querySelector('.menu-toggle');
 const mainNav = document.querySelector('.main-nav');
+const navLinks = document.querySelectorAll('.main-nav a');
 
-if (menuToggle && mainNav) {
-  menuToggle.addEventListener('click', () => {
-    const isOpen = mainNav.classList.toggle('is-open');
-    menuToggle.setAttribute('aria-expanded', String(isOpen));
-  });
-}
+// OPEN/CLOSE MENU WHEN HAMBURGER IS CLICKED
+menuToggle.addEventListener('click', function() {
+  menuToggle.classList.toggle('is-open');
+  mainNav.classList.toggle('is-open');
+});
 
-// Close the mobile menu after a link is selected
-document.querySelectorAll('.main-nav a').forEach((link) => {
-  link.addEventListener('click', () => {
-    mainNav?.classList.remove('is-open');
-    menuToggle?.setAttribute('aria-expanded', 'false');
+// CLOSE MENU WHEN YOU CLICK A LINK
+navLinks.forEach(link => {
+  link.addEventListener('click', function() {
+    menuToggle.classList.remove('is-open');
+    mainNav.classList.remove('is-open');
   });
 });
 
-// Add a subtle shadow when the page is scrolled
-const siteHeader = document.querySelector('.site-header');
-window.addEventListener('scroll', () => {
-  if (!siteHeader) return;
-  siteHeader.style.boxShadow = window.scrollY > 10 ? '0 10px 30px rgba(43, 18, 69, 0.08)' : 'none';
+// CLOSE MENU WHEN YOU CLICK OUTSIDE
+document.addEventListener('click', function(event) {
+  const isClickInside = mainNav.contains(event.target) || menuToggle.contains(event.target);
+  if (!isClickInside && mainNav.classList.contains('is-open')) {
+    menuToggle.classList.remove('is-open');
+    mainNav.classList.remove('is-open');
+  }
 });
 
-// Set the current year in the footer
-const year = document.getElementById('year');
-if (year) {
-  year.textContent = new Date().getFullYear();
+// UPDATE FOOTER YEAR
+const yearElement = document.getElementById('year');
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
 }
+
+// CLOSE MENU IF WINDOW GETS BIG (desktop)
+window.addEventListener('resize', function() {
+  if (window.innerWidth > 760) {
+    menuToggle.classList.remove('is-open');
+    mainNav.classList.remove('is-open');
+  }
+});
