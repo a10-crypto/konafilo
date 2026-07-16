@@ -134,6 +134,74 @@
       </div>
     </section>
 
+    <!-- === START OF NEW CUSTOMER REGISTRATION BLOCK === -->
+    <section class="section" style="background-color: #FAF6F0; padding: 60px 20px; text-align: center;">
+      <div class="container" style="max-width: 650px; margin: 0 auto; background: #ffffff; padding: 40px 30px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); border: 1px solid rgba(91, 44, 131, 0.1);">
+        <p class="eyebrow" style="margin-bottom: 10px;">انضم إلينا</p>
+        <h2 style="color: #5B2C83; font-size: 28px; margin-bottom: 15px; font-weight: bold; font-family: 'Cairo', sans-serif;">نادي عشاق كنافيلو 💜</h2>
+        <p style="color: #555555; font-size: 16px; margin-bottom: 30px; line-height: 1.6; font-family: 'Cairo', sans-serif;">
+          سجل رقم جوالك لتصلك عروضنا الحصرية، وتكون أول من يعلم فور خروج صواني الكنافة والبسبوسة الطازجة من الفرن!
+        </p>
+
+        <!-- Form Container -->
+        <div style="display: flex; flex-direction: column; gap: 15px; max-width: 400px; margin: 0 auto;">
+          <input type="tel" id="customerPhone" placeholder="05xxxxxxxx" style="
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 18px;
+            text-align: center;
+            outline: none;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+            transition: border-color 0.3s ease;
+          " onfocus="this.style.borderColor='#5B2C83'" onblur="this.style.borderColor='#e0e0e0'">
+
+          <button onclick="sendToWhatsApp()" style="
+            background-color: #5B2C83;
+            color: #ffffff;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 'Cairo', sans-serif;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+            width: 100%;
+          " onmouseover="this.style.backgroundColor='#432062'" onmouseout="this.style.backgroundColor='#5B2C83'">
+            انضم الآن عبر الواتساب
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <script>
+    function sendToWhatsApp() {
+        var phoneInput = document.getElementById('customerPhone').value.trim();
+        
+        if (phoneInput === "") {
+            alert("لطفاً، أدخل رقم الجوال أولاً.");
+            return;
+        }
+        
+        // RegEx to validate basic Saudi phone numbers (starts with 05 or 5 or +966)
+        var saPhoneRegex = /^(05|5|\+9665|9665)\d{8}$/;
+        if(!saPhoneRegex.test(phoneInput)) {
+            alert("الرجاء إدخال رقم جوال سعودي صحيح (مثال: 05xxxxxxxx)");
+            return;
+        }
+        
+        var businessNumber = "966569956512"; 
+        var message = "أهلاً كنافيلو! أرغب بالانضمام إلى ناديكم الإخباري للحصول على العروض الحصرية. رقم جوالي هو: " + phoneInput;
+        var whatsappUrl = "https://wa.me/" + businessNumber + "?text=" + encodeURIComponent(message);
+        
+        window.open(whatsappUrl, '_blank');
+    }
+    </script>
+    <!-- === END OF NEW CUSTOMER REGISTRATION BLOCK === -->
+
     <!-- Contact and map -->
     <section class="section section-alt" id="contact">
       <div class="container contact-grid">
