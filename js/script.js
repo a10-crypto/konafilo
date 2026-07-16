@@ -39,3 +39,26 @@ window.addEventListener('resize', function() {
     mainNav.classList.remove('is-open');
   }
 });
+
+// ========== WHATSAPP CLUB REGISTRATION LOGIC ==========
+function sendToWhatsApp() {
+  const phoneInput = document.getElementById('customerPhone').value.trim();
+  
+  if (phoneInput === "") {
+    alert("لطفاً، أدخل رقم الجوال أولاً.");
+    return;
+  }
+  
+  // Basic validation to check for a valid Saudi mobile number structure
+  const saPhoneRegex = /^(05|5|\+9665|9665)\d{8}$/;
+  if(!saPhoneRegex.test(phoneInput)) {
+    alert("الرجاء إدخال رقم جوال سعودي صحيح (مثال: 05xxxxxxxx)");
+    return;
+  }
+  
+  const businessNumber = "966569956512"; 
+  const message = "أهلاً كنافيلو! أرغب بالانضمام إلى ناديكم الإخباري للحصول على العروض الحصرية. رقم جوالي هو: " + phoneInput;
+  const whatsappUrl = "https://wa.me/" + businessNumber + "?text=" + encodeURIComponent(message);
+  
+  window.open(whatsappUrl, '_blank');
+}
