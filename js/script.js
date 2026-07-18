@@ -40,7 +40,7 @@ window.addEventListener('resize', function() {
   }
 });
 
-// ========== WHATSAPP CLUB REGISTRATION LOGIC ==========
+// ========== WHATSAPP CLUB REGISTRATION LOGIC WITH WELCOME GIFT ==========
 function sendToWhatsApp() {
   const phoneInput = document.getElementById('customerPhone').value.trim();
   
@@ -57,7 +57,8 @@ function sendToWhatsApp() {
   }
   
   const businessNumber = "966569956512"; 
-  const message = "أهلاً كنافيلو! أرغب بالانضمام إلى ناديكم الإخباري للحصول على العروض الحصرية. رقم جوالي هو: " + phoneInput;
+  // تم تحديث الرسالة هنا لتشمل المطالبة بخصم الـ 10% تلقائياً
+  const message = "أهلاً كنافيلو! قمت بالتسجيل في ناديكم الإخباري عبر الموقع للحصول على العروض الحصرية. رقم جوالي هو: " + phoneInput + "، وأرغب في تفعيل كود خصم الـ 10% الفوري لطلبي القادم! 💜";
   const whatsappUrl = "https://wa.me/" + businessNumber + "?text=" + encodeURIComponent(message);
   
   window.open(whatsappUrl, '_blank');
