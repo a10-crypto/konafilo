@@ -258,6 +258,15 @@ a { text-decoration: none; }
 
 .product-card h3 { color: var(--primary); margin-bottom: 0.4rem; }
 
+/* New Product Image Style */
+.product-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 1rem;
+}
+
 /* FEATURES */
 .about-grid {
   display: grid;
