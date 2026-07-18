@@ -10,6 +10,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- إضافة مكتبة Font Awesome للأيقونات الفاخرة -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -103,7 +107,7 @@
         <div>
           <p class="eyebrow">لماذا تختارنا</p>
           <h2>فخامة الذوق في كل لقمة</h2>
-          <p>نؤمن أن الحلوى تجربة تُحسّ بها من أول لمسة إلى آخر لقمة، لذلك نختار المكونات بعناية ونقدّمها بأكثر شكل راقٍ.</p>
+          <p>نؤمن أن الحلوى تجربة تُحسّ بها من أول لمسة إلى آخر لقمة, لذلك نختار المكونات بعناية ونقدّمها بأكثر شكل راقٍ.</p>
         </div>
         <div class="feature-list">
           <div class="feature-item">
@@ -187,15 +191,25 @@
           <p class="eyebrow">تواصل معنا</p>
           <h2>نحن هنا لاستقبالك بكل فخامة</h2>
           <p>زورونا في المدينة المنورة أو تواصلوا معنا مباشرة للطلب والاستفسار.</p>
-          <ul class="contact-list">
-            <li><strong>الموقع:</strong> المدينة المنورة، السعودية</li>
-            <li><strong>الساعات:</strong> يوميًا من 4:00 مساءً إلى 12:00 صباحًا</li>
-            <li><strong>واتساب:</strong> +966569956512</li>
-            <li><strong>إنستغرام:</strong> @Konafilo.sa</li>
-            <li><strong>تيك توك:</strong> @Konafilo.sa</li>
-            <li><strong>سناب شات:</strong> @Konafilo.sa</li>
-          </ul>
-          <a class="btn btn-primary" href="https://wa.me/966569956512" target="_blank" rel="noopener">ابدأ طلبك الآن</a>
+          
+          <!-- تفاصيل الموقع والوقت الأساسية -->
+          <div class="contact-details">
+            <p><i class="fas fa-map-marker-alt"></i> <strong>الموقع:</strong> المدينة المنورة، السعودية</p>
+            <p><i class="fas fa-clock"></i> <strong>الساعات:</strong> يوميًا من 4:00 مساءً إلى 12:00 صباحًا</p>
+          </div>
+
+          <!-- تحسين تجربة روابط التواصل الاجتماعي بتحويلها إلى أيقونات تفاعلية فخمة وملونة -->
+          <div class="social-sharing-block">
+            <p class="social-title">تابعنا واطلب مباشرة عبر حساباتنا:</p>
+            <div class="social-buttons-container">
+              <a class="social-btn whatsapp" href="https://wa.me/966569956512" target="_blank" rel="noopener" aria-label="واتساب كنافيلو"><i class="fab fa-whatsapp"></i></a>
+              <a class="social-btn instagram" href="https://instagram.com/Konafilo.sa" target="_blank" rel="noopener" aria-label="إنستغرام كنافيلو"><i class="fab fa-instagram"></i></a>
+              <a class="social-btn tiktok" href="https://tiktok.com/@Konafilo.sa" target="_blank" rel="noopener" aria-label="تيك توك كنافيلو"><i class="fab fa-tiktok"></i></a>
+              <a class="social-btn snapchat" href="https://snapchat.com/add/Konafilo.sa" target="_blank" rel="noopener" aria-label="سناب شات كنافيلو"><i class="fab fa-snapchat"></i></a>
+            </div>
+          </div>
+
+          <a class="btn btn-primary" href="https://wa.me/966569956512" target="_blank" rel="noopener" style="margin-top: 1.5rem; width: 100%;">ابدأ طلبك الآن</a>
         </div>
 
         <div class="map-card">

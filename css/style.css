@@ -309,19 +309,74 @@ a { text-decoration: none; }
 .gallery-two { background: linear-gradient(135deg, rgba(43,18,69,0.2), rgba(255,249,243,0.25)), url('../images/logo.png') center/cover no-repeat; }
 .gallery-three { background: linear-gradient(135deg, rgba(212,175,55,0.3), rgba(91,44,131,0.2)), url('../images/logo.png') center/cover no-repeat; }
 
-/* CONTACT */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.2rem;
+/* CONTACT SECTION DESIGN ENHANCEMENTS */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
 }
 
-.contact-list {
-  list-style: none;
-  display: grid;
-  gap: 0.65rem;
-  margin: 1rem 0 1.2rem;
+.contact-details p {
+  font-size: 1rem;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
+
+.contact-details p i {
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+/* بلوك أيقونات السوشيال ميديا الجديد */
+.social-sharing-block {
+  background: rgba(91, 44, 131, 0.04);
+  border: 1px dashed rgba(91, 44, 131, 0.2);
+  border-radius: 16px;
+  padding: 1.2rem;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.social-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 1rem !important;
+}
+
+.social-buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+/* الأزرار الدائرية التفاعلية */
+.social-btn {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 1.4rem;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.social-btn:hover {
+  transform: translateY(-5px) scale(1.08);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* ألوان الهوية الرسمية للمنصات */
+.social-btn.whatsapp { background: #25D366; }
+.social-btn.instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+.social-btn.tiktok { background: #000000; }
+.social-btn.snapchat { background: #FFFC00; color: #000000; }
 
 .map-card iframe {
   width: 100%;
@@ -388,10 +443,8 @@ a { text-decoration: none; }
 }
 
 @media (max-width: 760px) {
-  /* Show hamburger menu with touch-friendly spacing */
   .menu-toggle { display: block; padding: 0.5rem; }
   
-  /* Slide-out mobile navigation drawer */
   .main-nav {
     position: fixed;
     top: 70px;
@@ -418,7 +471,6 @@ a { text-decoration: none; }
     color: var(--text);
   }
 
-  /* Improved Hero Mobile Spacing */
   .hero { padding: 3rem 0; text-align: center; }
   .hero h1 { font-size: 1.8rem; line-height: 1.3; }
   .hero-actions { flex-direction: column; width: 100%; gap: 1rem; }
@@ -426,12 +478,11 @@ a { text-decoration: none; }
   .hero-info { flex-direction: column; align-items: center; width: 100%; }
   .hero-info span { width: 100%; text-align: center; }
 
-  /* Structured Stacked Grids for Mobile Display */
   .section { padding: 3rem 0; }
   .product-grid, .gallery-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-  .product-img { height: 220px; } /* Slightly taller for striking single-column product layout */
+  .product-img { height: 220px; }
   
-  .feature-item:hover { transform: translateY(-4px); } /* Swap side transform to upward on touch */
+  .feature-item:hover { transform: translateY(-4px); }
   .footer-content { flex-direction: column; text-align: center; gap: 0.8rem; }
   .whatsapp-float { width: 52px; height: 52px; font-size: 1.3rem; left: 1.2rem; bottom: 1.2rem; }
 }
